@@ -33,8 +33,8 @@ public class ArticleService {
         return article.get();
     }
 
-    public List<Article> getList() {
-        return this.articleRepository.findAll();
+    public List<Article> getList(String kw) {
+        return this.articleRepository.findAllByKeyword(kw);
     }
 
     public void modify(Article article, String title, String content) {

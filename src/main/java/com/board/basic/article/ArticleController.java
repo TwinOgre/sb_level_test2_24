@@ -25,9 +25,10 @@ public class ArticleController {
     private final UserService userService;
 
     @GetMapping("/list")
-    public String list(Model model) {
-        List<Article> articleList = this.articleService.getList();
+    public String list(Model model ,@RequestParam(value = "kw", defaultValue = "") String kw) {
+        List<Article> articleList = this.articleService.getList(kw);
         model.addAttribute("articleList", articleList);
+        model.addAttribute("kw",kw);
         return "article_list";
     }
     @PreAuthorize("isAuthenticated()")
