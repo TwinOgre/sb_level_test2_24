@@ -25,6 +25,10 @@ public class UserController {
         if(bindingResult.hasErrors()){
             return "user_signUpForm";
         }
+        SiteUser siteUser = this.userService.getUser(userForm.getUsername());
+        if(siteUser != null){
+            return "user_signUpForm";
+        }
         if(!userForm.getPassword1().equals(userForm.getPassword2())){
             bindingResult.rejectValue("password2","passwordInvalid",
                     "비밀번호가 일치하지 않습니다.");
