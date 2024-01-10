@@ -1,4 +1,6 @@
-<table>
+<html layout:decorate="~{layout}">
+<div layout:fragment="content">
+<table class="table">
     <thead>
         <tr>
             <th>제목</th>
@@ -11,5 +13,7 @@
             <td th:text="${article.createDate}"></td>
         </tr>
     </tbody>
-    <a th:href="@{/article/create}">등록</a>
+    <a th:href="@{/article/create}" class="btn btn-primary">등록</a>
 </table>
+</div>
+</html>

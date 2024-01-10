@@ -1,35 +1,30 @@
-package com.board.basic.article;
+package com.board.basic.user;
 
-import com.board.basic.user.SiteUser;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 
-import java.security.Signature;
 import java.time.LocalDateTime;
 
-@Entity
 @Getter
 @Setter
-public class Article {
+@Entity
+public class SiteUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(length = 200)
-    private String title;
+    @Column(unique = true)
+    private String username;
 
-    @Column(columnDefinition = "TEXT")
-    private String content;
+    @Column(unique = true)
+    private String nickname;
+
+    private String password;
 
     @CreatedDate
     private LocalDateTime createDate;
 
     private LocalDateTime modifyDate;
-
-    @ManyToOne
-    private SiteUser author;
-
-
 }

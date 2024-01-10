@@ -1,0 +1,15 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content">
+    <form th:action="@{|/article/modify/${article.id}|}" method="post">
+        <div class="mb-3">
+            <label for="title" class="form-label">제목</label>
+            <input type="text" class="form-control" name="title"id="title" aria-describedby="subject">
+        </div>
+        <div class="mb-3">
+            <label for="content" class="form-label">내용</label>
+            <textarea type="text" class="form-control" name="content" id="content"></textarea>
+        </div>
+        <button type="submit" class="btn btn-dark">수정</button>
+    </form>
+</div>
+</html>
