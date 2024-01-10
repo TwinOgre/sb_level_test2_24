@@ -1,6 +1,7 @@
 <html layout:decorate="~{layout}">
 <div layout:fragment="content">
-    <div>
+    <div class="card">
+        <div class="card-body">
 <h3 th:text="${article.title}"></h3>
 <p th:text="${article.content}"></p>
 
@@ -10,6 +11,7 @@
        th:if="${article.author != null and #authentication.getPrincipal().getUsername() == article.author.username}" class="btn btn-dark">Article 수정</a>
     <a th:href="@{|/article/delete/${article.id}|}" sec:authorize="isAuthenticated()"
        th:if="${article.author != null and #authentication.getPrincipal().getUsername() == article.author.username}"class="btn btn-danger">Article 삭제</a>
+        </div>
     </div>
 <button TYPE="submit">게시판</button>
 </div>

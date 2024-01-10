@@ -1,11 +1,14 @@
 <html layout:decorate="~{layout}">
 <div layout:fragment="content">
 <form th:action="@{/article/create}" method="post">
-    제목
-    <input type="text" name="title">
-    <br>
-    내용
-    <textarea name="content" id="" cols="30" rows="10"></textarea>
+    <div class="mb-3">
+        <label for="title" class="form-label">제목</label>
+        <input type="text" class="form-control" name="title" id="title" aria-describedby="title">
+    </div>
+    <div class="mb-3">
+        <label for="content" class="form-label">내용</label>
+        <textarea class="form-control" name="content" id="content" aria-describedby="content"></textarea>
+    </div>
     <button type="submit"> 게시글 등록</button>
 </form>
 </div>
