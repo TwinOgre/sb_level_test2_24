@@ -1,8 +1,11 @@
 package com.board.basic.article;
 
+import com.board.basic.user.SiteUser;
+import com.board.basic.user.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.security.Principal;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -11,11 +14,13 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class ArticleService {
     private final ArticleRepository articleRepository;
+    private final UserService userService;
 
-    public void create(String title, String content) {
+    public void create(String title, String content, SiteUser siteUser) {
         Article article = new Article();
         article.setTitle(title);
         article.setContent(content);
+        article.setAuthor(siteUser);
         article.setCreateDate(LocalDateTime.now());
 
         this.articleRepository.save(article);
