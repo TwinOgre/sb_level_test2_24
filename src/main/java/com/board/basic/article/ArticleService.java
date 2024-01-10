@@ -18,6 +18,7 @@ public class ArticleService {
 
     public void create(String title, String content, SiteUser siteUser) {
         Article article = new Article();
+
         article.setTitle(title);
         article.setContent(content);
         article.setAuthor(siteUser);
