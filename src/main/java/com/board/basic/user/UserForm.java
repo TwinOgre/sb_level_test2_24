@@ -9,6 +9,7 @@ public class UserForm {
 
     private String username;
     private String nickname;
+    private String password;
     private String password1;
     private String password2;
 }

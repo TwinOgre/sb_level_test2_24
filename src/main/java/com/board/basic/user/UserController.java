@@ -15,7 +15,7 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("/signUp")
-    public String signUp(){
+    public String signUp(UserForm userForm){
 
 
         return "user_signUpForm";
@@ -33,4 +33,15 @@ public class UserController {
         this.userService.signUp(userForm.getUsername(),userForm.getNickname(),userForm.getPassword1());
         return "redirect:/";
     }
+
+    @GetMapping("/login")
+    public String login(){
+
+        return "user_login";
+    }
+    @GetMapping("/logout")
+    public String logout(){
+        return "redirect:/";
+    }
+
 }

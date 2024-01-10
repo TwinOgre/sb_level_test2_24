@@ -20,4 +20,8 @@ public class UserService {
 
         this.userRepository.save(siteUser);
     }
+
+    public void login(String username, String password) {
+
+    }
 }

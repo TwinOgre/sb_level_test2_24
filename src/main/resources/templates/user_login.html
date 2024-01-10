@@ -1,0 +1,16 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content">
+    <h1>로그인</h1>
+    <form th:action="@{/user/login}" method="post">
+        <div class="mb-3">
+            <label for="username" class="form-label">유저이름</label>
+            <input type="text" class="form-control" name="username" id="username" aria-describedby="username">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">비밀번호</label>
+            <input type="password" class="form-control" name="password" id="password" aria-describedby="password">
+        </div>
+        <button type="submit" class="btn btn-success">로그인</button>
+    </form>
+</div>
+</html>
